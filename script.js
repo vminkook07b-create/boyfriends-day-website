@@ -3,7 +3,7 @@ const screens = [
   'letterScreen',
   'memoriesScreen',
   'reasonsScreen',
-  'cdScreen',
+  'playlistScreen',
   'envelopeScreen',
   'envelopeLetterScreen'
 ];
@@ -145,7 +145,7 @@ function setupMusic() {
   const bgMusic = document.getElementById('bgMusic');
 
   if (musicInput) musicInput.value = defaultMusicUrl;
-  if (musicBtn) musicBtn.textContent = 'Music playing';
+  if (musicBtn) musicBtn.textContent = '🔊 Music playing';
 
   if (bgMusic) {
     bgMusic.src = defaultMusicUrl;
@@ -175,10 +175,10 @@ function toggleMusic() {
 
   if (bgMusic.paused) {
     bgMusic.play();
-    musicBtn.textContent = 'Music playing';
+    musicBtn.textContent = '🔊 Music playing';
   } else {
     bgMusic.pause();
-    musicBtn.textContent = 'Music paused';
+    musicBtn.textContent = '🔇 Music paused';
   }
 }
 
@@ -248,7 +248,6 @@ function saveWebsite() {
   const content = {
     letterText: document.getElementById('letterText')?.textContent || '',
     musicUrl: document.getElementById('musicUrlInput')?.value || defaultMusicUrl,
-    cdLabel: document.getElementById('cdLabel')?.textContent || 'Perfect',
     finalMessage: document.getElementById('finalMessageText')?.textContent || 'created with love',
     reasons,
     memories: [
@@ -290,13 +289,6 @@ function restoreSavedWebsite() {
         audio.load();
         audio.play().catch(() => {});
       }
-    }
-
-    if (content.cdLabel) {
-      const label = document.getElementById('cdLabel');
-      const labelInput = document.getElementById('cdLabelInput');
-      if (label) label.textContent = content.cdLabel;
-      if (labelInput) labelInput.value = content.cdLabel;
     }
 
     if (content.finalMessage) {
@@ -347,13 +339,6 @@ const reasonInput = document.getElementById('newReasonInput');
 if (reasonInput) {
   reasonInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') addReason();
-  });
-}
-
-const cdLabelInput = document.getElementById('cdLabelInput');
-if (cdLabelInput) {
-  cdLabelInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') updateCDLabel();
   });
 }
 
