@@ -1,162 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Boyfriend's Day, Baby ✨</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Background Music -->
-    <audio id="bgMusic" autoplay loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Boyfriend's Day, Babe ✨</title>
+    <meta
+      name="description"
+      content="A luxury whimsical romantic surprise for your favorite babe on Boyfriend's Day."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <audio id="bgMusic" autoplay loop playsinline>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
     </audio>
 
-    <!-- Floating Stars and Decorations -->
-    <div class="stars-container"></div>
-    <div class="kisses-container"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="stars-container" aria-hidden="true"></div>
+    <div class="sparkles" aria-hidden="true"></div>
 
-    <!-- Opening Screen -->
-    <div id="openingScreen" class="screen active">
-        <div class="opening-content">
-            <h1 class="opening-title">here's something special for you</h1>
-            <div class="heart-pulse">💕</div>
-            <p class="opening-subtitle">click anywhere to continue</p>
-        </div>
+    <div id="openingScreen" class="screen active" aria-live="polite">
+      <div class="intro-card">
+        <div class="badge">For my favorite person</div>
+        <h1>here's something special for you</h1>
+        <div class="heartburst">💖</div>
+        <p>babe, you are my forever favorite.</p>
+        <button class="primary-btn" onclick="nextScreen()">Open the surprise</button>
+      </div>
     </div>
 
-    <!-- Letter Screen -->
     <div id="letterScreen" class="screen">
-        <div class="letter-container">
-            <div class="letter">
-                <div class="letter-content">
-                    <h2 class="letter-header">HAPPY BOYFRIENDS DAY MY BABY</h2>
-                    <p class="letter-text" id="letterText">
-                        hey, happy boyfriends day babe. i know i dont say it enough but you're the best boyfriend in the entire world and i love you sooo much that i can never express in words. you're the best thing that ever happend to me and i cannot express in words how much i am grateful for your presence in my life. you're the air i breathe, the water i need to survive, you're the light in my dark lonely world. i know i can be annoying sometimes and moody also and may not tell you everything but you should know that even if i get distant at times you are the one that gives me hope and courage to go through everything that happens. but i hope you will try to tell me everything because i'm always here for you no matter what through your evey high and low. i will never leave you no matter what. just so you know you were there for me through everything and i love you for every bit of it. you are sooo perfect to me that words could never express i hope you know that.
-                    </p>
-                    <p class="letter-signature">Forever yours,<br>Your Wifey 💕</p>
-                </div>
-                <div class="letter-decoration">
-                    <span class="deco-star">✨</span>
-                    <span class="deco-heart">💕</span>
-                    <span class="deco-star">✨</span>
-                </div>
+      <div class="letter-shell">
+        <div class="letter-vintage">
+          <div class="letter-top"></div>
+          <div class="letter-ribbon ribbon-left">✦</div>
+          <div class="letter-ribbon ribbon-right">✦</div>
+
+          <div class="letter-content">
+            <div class="letter-title">HAPPY BOYFRIENDS DAY MY BABY</div>
+
+            <p class="letter-message" id="letterText">
+              hey, happy boyfriends day babe. i know i dont say it enough but you're the best boyfriend in the entire world and i love you sooo much that i can never express in words. you're the best thing that ever happend to me and i cannot express in words how much i am grateful for your presence in my life. you're the air i breathe, the water i need to survive, you're the light in my dark lonely world. i know i can be annoying sometimes and moody also and may not tell you everything but you should know that even if i get distant at times you are the one that gives me hope and courage to go through everything that happens. but i hope you will try to tell me everything because i'm always here for you no matter what through your every high and low. i will never leave you no matter what. just so you know you were there for me through everything and i love you for every bit of it. you are sooo perfect to me that words could never express i hope you know that. i love your hair, your voice, your eyes, and the way you make my heart feel at home.
+            </p>
+
+            <div class="signature-block">
+              <span>With all my love,</span>
+              <strong>your wifey 💕</strong>
             </div>
+          </div>
         </div>
-        <button class="nav-btn" onclick="nextScreen()">Next ➜</button>
+      </div>
+      <button class="primary-btn" onclick="nextScreen()">Next</button>
     </div>
 
-    <!-- Memories Screen -->
     <div id="memoriesScreen" class="screen">
-        <h2 class="section-title">Our Memories Together ✨</h2>
-        <div class="memories-gallery">
-            <div class="polaroid-card" id="polaroid-1">
-                <div class="polaroid-image">
-                    <img src="https://via.placeholder.com/250x300?text=Memory+1" alt="Memory 1" id="memImg1">
-                </div>
-                <input type="text" class="polaroid-caption" id="memCaption1" placeholder="Add caption..." value="Our first adventure together">
-                <div class="edit-btn" onclick="editImage('memImg1')">📷 Change Photo</div>
-            </div>
+      <div class="section-header">
+        <div class="small-tag">our story</div>
+        <h2>Our Beautiful Memories</h2>
+      </div>
 
-            <div class="polaroid-card" id="polaroid-2">
-                <div class="polaroid-image">
-                    <img src="https://via.placeholder.com/250x300?text=Memory+2" alt="Memory 2" id="memImg2">
-                </div>
-                <input type="text" class="polaroid-caption" id="memCaption2" placeholder="Add caption..." value="You make me smile">
-                <div class="edit-btn" onclick="editImage('memImg2')">📷 Change Photo</div>
-            </div>
+      <div class="polaroid-grid">
+        <article class="polaroid card-1">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Memory 1" id="memImg1" />
+          </div>
+          <input class="caption-box" id="memCaption1" value="Our first adventure together" aria-label="Memory 1 caption" />
+          <button class="mini-btn" onclick="editImage('memImg1')">Change Photo</button>
+        </article>
 
-            <div class="polaroid-card" id="polaroid-3">
-                <div class="polaroid-image">
-                    <img src="https://via.placeholder.com/250x300?text=Memory+3" alt="Memory 3" id="memImg3">
-                </div>
-                <input type="text" class="polaroid-caption" id="memCaption3" placeholder="Add caption..." value="Forever with you">
-                <div class="edit-btn" onclick="editImage('memImg3')">📷 Change Photo</div>
-            </div>
+        <article class="polaroid card-2">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="Memory 2" id="memImg2" />
+          </div>
+          <input class="caption-box" id="memCaption2" value="You make my world brighter" aria-label="Memory 2 caption" />
+          <button class="mini-btn" onclick="editImage('memImg2')">Change Photo</button>
+        </article>
 
-            <div class="polaroid-card" id="polaroid-4">
-                <div class="polaroid-image">
-                    <img src="https://via.placeholder.com/250x300?text=Memory+4" alt="Memory 4" id="memImg4">
-                </div>
-                <input type="text" class="polaroid-caption" id="memCaption4" placeholder="Add caption..." value="Best days with you">
-                <div class="edit-btn" onclick="editImage('memImg4')">📷 Change Photo</div>
-            </div>
-        </div>
-        <button class="nav-btn" onclick="nextScreen()">Next ➜</button>
+        <article class="polaroid card-3">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Memory 3" id="memImg3" />
+          </div>
+          <input class="caption-box" id="memCaption3" value="Forever with you" aria-label="Memory 3 caption" />
+          <button class="mini-btn" onclick="editImage('memImg3')">Change Photo</button>
+        </article>
+
+        <article class="polaroid card-4">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=900&q=80" alt="Memory 4" id="memImg4" />
+          </div>
+          <input class="caption-box" id="memCaption4" value="Best days with my favorite person" aria-label="Memory 4 caption" />
+          <button class="mini-btn" onclick="editImage('memImg4')">Change Photo</button>
+        </article>
+      </div>
+
+      <button class="primary-btn" onclick="nextScreen()">Next</button>
     </div>
 
-    <!-- 1000 Reasons Screen -->
     <div id="reasonsScreen" class="screen">
-        <h2 class="section-title">1000 Reasons Why I Love You 💕</h2>
-        <div class="reasons-container">
-            <div id="reasonsList" class="reasons-list"></div>
-        </div>
-        <div class="add-reason">
-            <input type="text" id="newReasonInput" placeholder="Add a reason..." maxlength="100">
-            <button onclick="addReason()">Add ➜</button>
-        </div>
-        <button class="nav-btn" onclick="nextScreen()">Next ➜</button>
+      <div class="section-header">
+        <div class="small-tag">1000 reasons</div>
+        <h2>Why I Love You</h2>
+      </div>
+
+      <div class="reasons-panel">
+        <div id="reasonsList" class="reasons-list"></div>
+      </div>
+
+      <div class="reason-input-wrap">
+        <input id="newReasonInput" class="reason-input" type="text" maxlength="120" placeholder="Add a cute reason..." />
+        <button class="secondary-btn" onclick="addReason()">Add</button>
+      </div>
+
+      <button class="primary-btn" onclick="nextScreen()">Next</button>
     </div>
 
-    <!-- Music CD Screen -->
     <div id="cdScreen" class="screen">
-        <h2 class="section-title">Our Playlist 🎵</h2>
-        <div class="cd-container">
-            <div class="cd">
-                <div class="cd-inner">
-                    <p class="cd-label" id="cdLabel">♫ Our Song ♫</p>
-                </div>
-            </div>
+      <div class="section-header">
+        <div class="small-tag">our anthem</div>
+        <h2>Perfect</h2>
+      </div>
+
+      <div class="cd-wrap">
+        <div class="vinyl">
+          <div class="vinyl-inner">
+            <span id="cdLabel">Perfect</span>
+          </div>
         </div>
-        <div class="music-controls">
-            <button onclick="toggleMusic()" class="music-btn" id="musicBtn">🔊 Music Playing</button>
-            <input type="text" id="cdLabelInput" placeholder="Change CD label..." class="edit-input" value="Our Song">
-            <button onclick="updateCDLabel()">Update Label</button>
+      </div>
+
+      <div class="music-controls">
+        <button id="musicBtn" class="primary-btn small" onclick="toggleMusic()">Music playing</button>
+        <div class="music-editor">
+          <input id="musicUrlInput" class="reason-input" type="text" value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" placeholder="Paste a music URL" />
+          <button class="secondary-btn" onclick="updateMusicSource()">Set Music</button>
         </div>
-        <button class="nav-btn" onclick="nextScreen()">Next ➜</button>
+        <input id="cdLabelInput" class="reason-input" type="text" value="Perfect" placeholder="Edit CD label" />
+        <button class="secondary-btn" onclick="updateCDLabel()">Update Label</button>
+      </div>
+
+      <button class="primary-btn" onclick="nextScreen()">Next</button>
     </div>
 
-    <!-- Envelope Screen -->
     <div id="envelopeScreen" class="screen">
-        <h2 class="section-title">One More Thing... 💌</h2>
-        <div class="envelope-container">
-            <div class="envelope closed" id="envelope" onclick="openEnvelope()">
-                <div class="envelope-front">
-                    <p>open it baby 💕</p>
-                </div>
-            </div>
+      <div class="section-header">
+        <div class="small-tag">one last surprise</div>
+        <h2>Open it, baby</h2>
+      </div>
+
+      <div class="envelope-outer">
+        <div id="envelope" class="envelope" onclick="openEnvelope()" aria-label="Open envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-front">Open it, baby 💌</div>
         </div>
-        <p class="envelope-hint">Click the envelope to open</p>
+      </div>
     </div>
 
-    <!-- Letter Inside Envelope -->
-    <div id="envelopeLetterScreen" class="screen">
-        <div class="final-letter">
-            <div class="polaroid-final">
-                <div class="polaroid-image-final">
-                    <img src="https://via.placeholder.com/300x350?text=Your+Photo" alt="Special Photo" id="finalImg">
-                </div>
-                <div class="edit-btn" onclick="editImage('finalImg')">📷 Add Your Photo</div>
-            </div>
-            <div class="final-message">
-                <p id="finalMessageText">created with love</p>
-                <p id="finalSignature">from your wifey 💕 i love you so much 😘</p>
-                <p class="happy-message">HAPPY BOYFRIENDS DAY TILLU 🎉✨💕</p>
-            </div>
-            <input type="text" id="finalMessageInput" placeholder="Edit message..." class="edit-input" value="created with love">
-            <button onclick="updateFinalMessage()" class="update-btn">Update Message</button>
+    <div id="envelopeLetterScreen" class="screen final-screen">
+      <div class="final-card">
+        <div class="final-photo-wrap">
+          <div class="final-photo-frame">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Final memory" id="finalImg" />
+          </div>
+          <button class="mini-btn" onclick="editImage('finalImg')">Add Your Photo</button>
         </div>
+
+        <div class="final-note">
+          <p id="finalMessageText">created with love</p>
+          <p class="love-signature">from your wifey 💕</p>
+          <h3>HAPPY BOYFRIENDS DAY BABE</h3>
+        </div>
+
+        <div class="final-editor">
+          <input id="finalMessageInput" class="reason-input" type="text" value="created with love" placeholder="Write your note..." />
+          <button class="secondary-btn" onclick="updateFinalMessage()">Update</button>
+        </div>
+      </div>
     </div>
 
-    <!-- Kisses Animation -->
-    <div class="kisses-animation" id="kissesAnimation"></div>
+    <div class="kisses-layer" id="kissesLayer" aria-hidden="true"></div>
 
-    <!-- Save Button (Fixed) -->
-    <div class="save-section">
-        <button onclick="saveWebsite()" class="save-btn">💾 Save & Get Link</button>
-        <p id="saveMessage"></p>
+    <div class="save-box">
+      <button class="save-btn" onclick="saveWebsite()">💾 Save & Keep</button>
+      <div id="saveMessage" class="save-message"></div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
