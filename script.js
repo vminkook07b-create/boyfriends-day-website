@@ -182,17 +182,6 @@ function toggleMusic() {
   }
 }
 
-function updateCDLabel() {
-  const input = document.getElementById('cdLabelInput');
-  const label = document.getElementById('cdLabel');
-  if (!input || !label) return;
-
-  const value = input.value.trim();
-  if (!value) return;
-
-  label.textContent = value;
-}
-
 function openEnvelope() {
   const envelope = document.getElementById('envelope');
   if (!envelope) return;
